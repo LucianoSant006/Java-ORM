@@ -16,17 +16,16 @@ public class Activity {
     private String description;
     private Double price;
 
+    @OneToMany(mappedBy = "activities")
+    List<Block> blocks = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category categories ;
 
 
     public Activity(){
 
-    }
-
-    public Activity(String name, Integer id, String description, Double price) {
-        this.name = name;
-        this.id = id;
-        this.description = description;
-        this.price = price;
     }
 
     public Integer getId() {
@@ -61,7 +60,17 @@ public class Activity {
         this.price = price;
     }
 
+    public List<Block> getBlocks() {
+        return blocks;
+    }
 
+    public Category getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Category categories) {
+        this.categories = categories;
+    }
 
     @Override
     public boolean equals(Object o) {

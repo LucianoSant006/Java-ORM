@@ -3,6 +3,8 @@ package com.challenge.event_system.entities;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,12 +21,16 @@ public class Block {
     @Column(columnDefinition = "TIMESTAMP")
     private Instant end_time;
 
+    @ManyToOne
+    @JoinColumn(name = "activity_id")
+    private Activity activities;
     public Block() {}
 
-    public Block(Integer id, Instant start, Instant end) {
+    public Block(Integer id, Instant start, Instant end_time, Activity activities) {
         this.id = id;
         this.start = start;
-        this.end_time = end;
+        this.end_time = end_time;
+        this.activities = activities;
     }
 
     public Integer getId() {
@@ -43,12 +49,20 @@ public class Block {
         this.start = start;
     }
 
-    public Instant getEnd() {
+    public Instant getEnd_time() {
         return end_time;
     }
 
-    public void setEnd(Instant end) {
-        this.end_time = end;
+    public void setEnd_time(Instant end_time) {
+        this.end_time = end_time;
+    }
+
+    public Activity getActivities() {
+        return activities;
+    }
+
+    public void setActivities(Activity activities) {
+        this.activities = activities;
     }
 
     @Override
