@@ -1,6 +1,11 @@
-INSERT INTO TB_PARTICIPANT(name, email) VALUES('Jóse Silva', 'jose@gmail.com');
-INSERT INTO TB_PARTICIPANT(name, email) VALUES('Tiago Faria', 'tiago@gmail.com');
-INSERT INTO TB_PARTICIPANT(name, email) VALUES('Maria do Rosário', 'maria@gmail.com');
-INSERT INTO TB_PARTICIPANT(name, email) VALUES('Teresa Silva', 'teresa@gmail.com');
-INSERT INTO TB_CATEGORY(description) VALUES ('Course');
-INSERT INTO TB_CATEGORY(description) VALUES ('Workshop');workshop
+INSERT INTO TB_PARTICIPANT (id,name, email) VALUES (1,'Jóse Silva', 'jose@gmail.com');
+INSERT INTO TB_PARTICIPANT (id,name, email) VALUES (2,'Tiago Faria', 'tiago@gmail.com');
+INSERT INTO TB_PARTICIPANT (id,name, email) VALUES (3,'Maria do Rosário', 'maria@gmail.com');
+INSERT INTO TB_PARTICIPANT ( id,name, email) VALUES (4,'Teresa Silva', 'teresa@gmail.com');
+INSERT INTO TB_CATEGORY ( id,description) VALUES (1,'Course');
+INSERT INTO TB_CATEGORY ( id ,description) VALUES (2,'Workshop');
+INSERT INTO TB_BLOCK(id, start, end_time)VALUES(1, TIMESTAMP WITH TIME ZONE '2017-09-25T08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25T11:00:00Z');
+
+INSERT INTO TB_BLOCK(id, start, end_time)VALUES(2, TIMESTAMP WITH TIME ZONE '2017-09-25T14:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25T18:00:00Z');
+
+INSERT INTO TB_BLOCK(id, start, end_time)VALUES(3, TIMESTAMP WITH TIME ZONE '2017-09-26T08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-26T11:00:00Z');
