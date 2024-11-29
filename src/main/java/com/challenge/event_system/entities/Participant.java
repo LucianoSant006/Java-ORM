@@ -2,7 +2,7 @@ package com.challenge.event_system.entities;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name ="TB_Participant")
@@ -15,6 +15,9 @@ public class Participant {
     private String name;
     @Column(unique = true)
     private String email;
+
+    @ManyToMany(mappedBy = "participants")
+    Set<Activity> activies = new HashSet<>();
 
     public Participant(){
 
@@ -48,6 +51,10 @@ public class Participant {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Activity> getActivies() {
+        return activies;
     }
 
     @Override
